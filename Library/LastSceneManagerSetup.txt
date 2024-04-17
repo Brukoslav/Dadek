@@ -1,0 +1,6 @@
+sceneSetups:
+- path: Assets/Zololgo/FlatPoly Board Game Assets/Scenes/FlatPoly Board Game Assets
+    Sample.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0

@@ -24,7 +24,7 @@ public class Lanzador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print("soy un " + ObtenerNumeroDado());
+
         if(Input.GetKeyDown(KeyCode.K))
         {
             for(int i=0;i<cuantos;i++)

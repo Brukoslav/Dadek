@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 23075021376185306}
   - component: {fileID: -6196568340341772726}
   - component: {fileID: -5747823541453199893}
+  - component: {fileID: -3199424586362101192}
   m_Layer: 0
   m_Name: dice_d6_green
-  m_TagString: Untagged
+  m_TagString: dado
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,3 +134,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6, y: 0.6, z: 0.6}
   m_Center: {x: -0.0003990978, y: 0.0008048564, z: -0.0012868494}
+--- !u!114 &-3199424586362101192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175917097681370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91af8d5fa9f3c644097f3ef399107ffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  margenExactitud: 0.95
+  explota: 0
+  explosionForce: 500
+  explosionRadius: 5

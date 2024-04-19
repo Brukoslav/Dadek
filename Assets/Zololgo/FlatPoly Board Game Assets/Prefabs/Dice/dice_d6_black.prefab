@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 23994336050119342}
   - component: {fileID: -8299658959179922117}
   - component: {fileID: 3845100920623157230}
+  - component: {fileID: -771400185430921102}
   m_Layer: 0
   m_Name: dice_d6_black
-  m_TagString: Untagged
+  m_TagString: dado
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357320309141382}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.8226405, z: 0, w: 0.5685619}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 110.7, z: 0}
 --- !u!33 &33617700451992616
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -133,3 +134,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6, y: 0.6, z: 0.6}
   m_Center: {x: -0.0003990978, y: 0.0008048564, z: -0.0012868494}
+--- !u!114 &-771400185430921102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357320309141382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91af8d5fa9f3c644097f3ef399107ffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  margenExactitud: 0.95
+  explota: 0
+  explosionForce: 500
+  explosionRadius: 5

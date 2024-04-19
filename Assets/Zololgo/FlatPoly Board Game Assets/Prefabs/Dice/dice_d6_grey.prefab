@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 23717726359530810}
   - component: {fileID: -1030071010600527936}
   - component: {fileID: 6779734306941408812}
+  - component: {fileID: -6903071558127956222}
   m_Layer: 0
   m_Name: dice_d6_grey
-  m_TagString: Untagged
+  m_TagString: dado
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,3 +134,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6, y: 0.6, z: 0.6}
   m_Center: {x: -0.0003990978, y: 0.0008048564, z: -0.0012868494}
+--- !u!114 &-6903071558127956222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136585495845022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91af8d5fa9f3c644097f3ef399107ffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  margenExactitud: 0.95
+  explota: 0
+  explosionForce: 500
+  explosionRadius: 5

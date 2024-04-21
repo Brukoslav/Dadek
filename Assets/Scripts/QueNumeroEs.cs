@@ -7,6 +7,7 @@ public class QueNumeroEs : MonoBehaviour
     // Start is called before the first frame update
     public float margenExactitud = 0.95f; // Margen de exactitud requerido
     public bool explota = false;
+    public bool colisiona = false;
     public float explosionForce;
     public float explosionRadius;
 
@@ -39,6 +40,14 @@ public class QueNumeroEs : MonoBehaviour
                 // Aplica una fuerza de explosión
                 rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
             }
+        }
+    }
+
+    void OnCollisionEnter(Collision collision) {
+        if (colisiona == true)
+        {
+
+            Debug.Log("Entered collision with " + collision.gameObject.name);
         }
     }
 

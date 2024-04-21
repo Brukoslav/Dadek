@@ -35,17 +35,17 @@ public class OrbitZoomPanCamera : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2)) {
 			deltaMovement = Vector2.zero;
 		}
-		if (Input.GetMouseButton(0))
+		if (Input.GetMouseButton(1))
 		{
 			transform.RotateAround (originPosition, Vector3.up, deltaMovement.x *orbitSpeed * Time.deltaTime);
 			transform.RotateAround (originPosition, transform.TransformDirection(Vector3.left), deltaMovement.y *orbitSpeed * Time.deltaTime);
 		}
-		else if (Input.GetMouseButton(1))
+		else if (Input.GetMouseButton(2))
 		{
 			transform.Translate (Vector3.back * deltaMovement.y * zoomSpeed * Time.deltaTime);
 			originDistance += deltaMovement.y * zoomSpeed * Time.deltaTime;
 		}
-		else if (Input.GetMouseButton(2))
+		else if (Input.GetMouseButton(2) && false)
 		{
 			transform.Translate (Vector3.left * deltaMovement.x * panSpeed * Time.deltaTime);
 			transform.Translate (Vector3.down * deltaMovement.y * panSpeed * Time.deltaTime);

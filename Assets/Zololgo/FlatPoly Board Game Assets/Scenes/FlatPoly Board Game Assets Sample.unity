@@ -10083,6 +10083,7 @@ MonoBehaviour:
   - {fileID: 1737463528607178, guid: 7a4603d3eb9b711468c8bfc634025f40, type: 3}
   - {fileID: 1357320309141382, guid: 282a9bdc905450341bacf34183a627b4, type: 3}
   - {fileID: 1436625024116136, guid: fe246b21d183cb248a98f41b12a4b66b, type: 3}
+  - {fileID: 1220159947244566, guid: 3cfa53567f86d39468a09b24ebfd30c8, type: 3}
   varianza: 0
   direccion: {x: 0, y: 0, z: 0}
   fuerza: 30
@@ -10096,6 +10097,8 @@ MonoBehaviour:
   barra: {fileID: 921883218}
   sizeBar: 0
   adelanteOrigen: 2
+  alLadoOrigen: 5
+  grillo: 0
 --- !u!4 &1082324207
 Transform:
   m_ObjectHideFlags: 0

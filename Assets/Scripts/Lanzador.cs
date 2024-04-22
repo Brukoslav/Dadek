@@ -21,6 +21,9 @@ public class Lanzador : MonoBehaviour
     public GameObject barra;
     public float sizeBar;
     public float adelanteOrigen;
+    public float alLadoOrigen;
+    public int grillo;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +49,7 @@ public class Lanzador : MonoBehaviour
             }
             else
             {
-                puntos.text = "Dados: " + dadoInfo[0] + "\nSuma: " + dadoInfo[1];
+                puntos.text = "Dados: " + dadoInfo[0] + " (grillo: "+grillo+")\nSuma: " + dadoInfo[1];
             }
 
         }
@@ -80,8 +83,8 @@ public class Lanzador : MonoBehaviour
 
 
                 Vector3 direccionPlana = -diferencia.normalized;
-
-                Vector3 origen = transform.position + (transform.parent.transform.up*direccionPlana.y + transform.parent.transform.right*direccionPlana.x)*5+ transform.parent.transform.forward*adelanteOrigen;
+                //print(direccionPlana.y + ", " + direccionPlana.x);
+                Vector3 origen = transform.position + (transform.parent.transform.up* Mathf.Max(direccionPlana.y,-0.1f) + transform.parent.transform.right*direccionPlana.x)* alLadoOrigen + transform.parent.transform.forward*adelanteOrigen;
                 direccion = hit.point - origen;
                 direccion = direccion.normalized;
                 LanzaDado(0, origen, direccion, fuerza* (0.3f+sizeBar/300));
@@ -166,6 +169,7 @@ public class Lanzador : MonoBehaviour
         // Mi función
         float sumaDados = 0;
         float nDados = 0;
+        grillo = 0;
         GameObject[] dados = GameObject.FindGameObjectsWithTag("dado");
 
         foreach (GameObject go in dados)
@@ -192,6 +196,7 @@ public class Lanzador : MonoBehaviour
     void LanzaDado(int i, Vector3 origen,  Vector3 direccion, float fuerza) {
         GameObject dado = Instantiate(dadoPrefab[i], origen, Quaternion.Euler(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360))) as GameObject;
         dado.GetComponent<Rigidbody>().velocity = (direccion * fuerza);
+        dado.GetComponent<QueNumeroEs>().lanzadorSc = this;
         if (i == 1) // explosivo
         {
             dado.GetComponent<QueNumeroEs>().explota = true;
@@ -206,7 +211,8 @@ public class Lanzador : MonoBehaviour
     {
         GameObject dado = Instantiate(dadoPrefab[i], transform.position + new Vector3(Random.Range(-varianza, varianza), Random.Range(-varianza, varianza), Random.Range(-varianza, varianza)), Quaternion.EulerAngles(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360))) as GameObject;
         dado.GetComponent<Rigidbody>().velocity = (direccion*fuerza);
-        if(i == 1) // explosivo
+        dado.GetComponent<QueNumeroEs>().lanzadorSc = this;
+        if (i == 1) // explosivo
         {
             dado.GetComponent<QueNumeroEs>().explota = true;
         }

@@ -8,8 +8,10 @@ public class QueNumeroEs : MonoBehaviour
     public float margenExactitud = 0.95f; // Margen de exactitud requerido
     public bool explota = false;
     public bool colisiona = false;
+    public bool noCuenta = false;
     public float explosionForce;
     public float explosionRadius;
+    public Lanzador lanzadorSc;
 
     private void Start()
     {
@@ -72,6 +74,9 @@ public class QueNumeroEs : MonoBehaviour
 
     public int GetUpwardFaceNumber()
     {
+        if(noCuenta) {
+            return 0;
+        }
         Vector3 upwardVector = Vector3.up; // Vector hacia arriba del dado
         int closestFace = 1; // Comenzar asumiendo que la cara 1 está hacia arriba
         float maxDotProduct = -Mathf.Infinity;
@@ -88,11 +93,13 @@ public class QueNumeroEs : MonoBehaviour
             }
         }
 
-        if (maxDotProduct > 0.7*0) // 0.7 es el margen; ajuste según la precisión deseada
+        if (maxDotProduct > 0.7) // 0.7 es el margen; ajuste según la precisión deseada
         {
+            
             return closestFace;
         } else
         {
+            lanzadorSc.grillo++;
             //print("no cuenta" + maxDotProduct);
         }
 

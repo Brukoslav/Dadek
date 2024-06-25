@@ -58,9 +58,11 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Mundo.cs" />
     <Compile Include="Assets\Scripts\List.cs" />
     <Compile Include="Assets\Zololgo\OrbitZoomPanCamera\Scripts\OrbitZoomPanCamera.cs" />
     <Compile Include="Assets\Scripts\Lanzador.cs" />
+    <Compile Include="Assets\Scripts\Estructuras\Cartas.cs" />
     <Compile Include="Assets\Scripts\QueNumeroEs.cs" />
   </ItemGroup>
   <ItemGroup>

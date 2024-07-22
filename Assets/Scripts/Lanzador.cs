@@ -59,7 +59,7 @@ public class Lanzador : MonoBehaviour
             }
             else
             {
-                puntos.text = "Dados: " + dadoInfo[0] + " (grillo: "+grillo+")\nSuma: " + dadoInfo[1];
+                puntos.text = "Dados: " + dadoInfo[0] + " (grillo: "+grillo+")\nSuma: " + dadoInfo[1] + "Suma: " + dadoInfo[2] + "% = " + Mathf.Round(dadoInfo[1]*(1+ dadoInfo[2]/100));
             }
 
         }
@@ -86,8 +86,12 @@ public class Lanzador : MonoBehaviour
             idCarta = 3;
             mudo = true;
         }
+        if (Input.GetKeyDown(KeyCode.Alpha5)) {
+            idCarta = 4;
+            mudo = true;
+        }
 
-        
+
         carta = mundo.misCartas[idCarta];
         if (mudo) {
             seleccionado.text = carta.Muestra();
@@ -203,6 +207,7 @@ public class Lanzador : MonoBehaviour
                 direccion = direccion.normalized;
             }
         }
+        /*
         if (Input.GetKey(KeyCode.A))
         {
             fuerza++;
@@ -211,6 +216,7 @@ public class Lanzador : MonoBehaviour
         {
             fuerza--;
         }
+        */
     }
 
 
@@ -223,6 +229,8 @@ public class Lanzador : MonoBehaviour
             return 2;
         } else if (tipoDado == "negro") {
             return 3;
+        } else if (tipoDado == "morado") {
+            return 3;
         }
         return 0;
     }
@@ -233,6 +241,7 @@ public class Lanzador : MonoBehaviour
 
         // Mi función
         float sumaDados = 0;
+        float sumaDadosMulti = 0;
         float nDados = 0;
         grillo = 0;
         GameObject[] dados = GameObject.FindGameObjectsWithTag("dado");
@@ -247,15 +256,20 @@ public class Lanzador : MonoBehaviour
             else
             {
                 nDados++;
-                sumaDados += go.GetComponent<QueNumeroEs>().GetUpwardFaceNumber();
+                if (go.GetComponent<QueNumeroEs>().esMultiplicador) {
+                    print("ajá");
+                    sumaDadosMulti += go.GetComponent<QueNumeroEs>().GetUpwardFaceNumber();
+                } else {
+                    sumaDados += go.GetComponent<QueNumeroEs>().GetUpwardFaceNumber();
+                }
                 if(go.GetComponent<Rigidbody>().velocity.magnitude>0.5f)
                 {
-                    return new List<float> { nDados, -1 };
+                    //return new List<float> { nDados, -1 };
                 }
             }
             
         }
-        return new List<float> { nDados, sumaDados };
+        return new List<float> { nDados, sumaDados, sumaDadosMulti };
     }
 
     void LanzaDado(int i, Vector3 origen,  Vector3 direccion, float fuerza) {
@@ -269,6 +283,7 @@ public class Lanzador : MonoBehaviour
         if (i == 3) // contacto
         {
             dado.GetComponent<QueNumeroEs>().colisiona = true;
+            dado.GetComponent<QueNumeroEs>().esMultiplicador = true;
         }
     }
 
@@ -288,6 +303,11 @@ public class Lanzador : MonoBehaviour
         if (i == 3) // contacto
         {
             dado.GetComponent<QueNumeroEs>().colisiona = true;
+        }
+        if (i == 3) // contacto
+        {
+            print("yapu");
+            dado.GetComponent<QueNumeroEs>().esMultiplicador = true;
         }
     }
 }

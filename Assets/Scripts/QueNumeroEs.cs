@@ -9,6 +9,7 @@ public class QueNumeroEs : MonoBehaviour
     public bool explota = false;
     public bool colisiona = false;
     public bool noCuenta = false;
+    public bool esMultiplicador = false;
     public float explosionForce;
     public float explosionRadius;
     public Lanzador lanzadorSc;

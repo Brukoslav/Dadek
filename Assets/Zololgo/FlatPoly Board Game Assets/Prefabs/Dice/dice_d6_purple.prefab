@@ -148,5 +148,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   margenExactitud: 0.95
   explota: 0
+  colisiona: 0
+  noCuenta: 0
+  esMultiplicador: 0
   explosionForce: 500
   explosionRadius: 5
+  lanzadorSc: {fileID: 0}

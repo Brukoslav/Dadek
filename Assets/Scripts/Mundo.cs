@@ -12,7 +12,8 @@ public class Mundo : MonoBehaviour
             new Cartas("blanco", 3, "cacho", 1),
             new Cartas("blanco", 80, "flujo", 1),
             new Cartas("azul", 1, "cacho", 3),
-            new Cartas("rojo", 1, "cacho", 1)
+            new Cartas("rojo", 1, "cacho", 1),
+            new Cartas("morado", 1, "cacho", 1)
         };
 
     }
